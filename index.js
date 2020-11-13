@@ -20,7 +20,7 @@ io.on("connection", function(socket){
     // Function called when the event chat message is emitted
     socket.on('chat message', (msg) => {
         console.log('message: ' + msg);
-        io.emit('chat message', msg);
+        socket.broadcast.emit('chat message', msg);
     });
 
     // Function called when a user disconnects from a socket io server
